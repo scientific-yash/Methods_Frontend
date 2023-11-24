@@ -1,6 +1,6 @@
 import React from "react";
 //import ReactDOM from "react-dom";
-import "./App.css";
+import "./index.css";
 //import Axios from "axios";
 
 const testData = [
@@ -30,12 +30,26 @@ class Card extends React.Component {
   }
 }
 
+class Form extends React.Component{
+  render(){
+    return(
+      <form action="">
+        <input type="text" placeholder="Github UserName"/>
+        <button>Add Card</button>
+      </form>
+    );
+  }
+}
 class App extends React.Component {
+  state={
+    profiles:testData,
+  };
   render() {
     return (
       <div>
         <div className="header">{this.props.title}</div>
-        <CardList />
+        <Form/>
+        <CardList profiles={this.state.profiles} />
       </div>
     );
   }
