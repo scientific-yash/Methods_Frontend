@@ -18,9 +18,9 @@ function AddCustomer() {
 
   return (
     <>
-      <div class="card" style={{alignItems:'center'}}>
+      <div className="card" style={{alignItems:'center',backgroundColor:'#E8F6EF'}}>
         <h3>Add Customer</h3>
-        <div class="card-body" style={{width:'40%'}}>
+        <div className="card-body" style={{width:'40%'}}>
           <label> <strong>Id:</strong> </label>
           <input type='text' name='id' onChange={handleInputChange}/><br />
           <label> <strong>First Name:</strong> </label>

@@ -11,17 +11,28 @@ function CustomerList() {
 
   return (
     <>
-      <div class="card" style={{alignItems:'center'}}>
-      <h3>Customer List</h3>
-        <div class="card-body" style={{width:'60%'}}>
-          <ul>
-            {customers.map(customer => (
-              <li key={customer.id}>
-                {customer.id}. {customer.firstName} {customer.lastName} - {customer.address} - {customer.phoneNumber}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="card" style={{ alignItems: 'center', backgroundColor: '#E8F6EF' }}>
+        <h3>Customer List</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              {customers.map(customer => (
+                <tr key={customer.id}>
+                  <td>{customer.id}</td>
+                  <td>{customer.firstName} {customer.lastName}</td>
+                  <td>{customer.address}</td>
+                  <td>{customer.phoneNumber}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
       </div>
     </>
   );

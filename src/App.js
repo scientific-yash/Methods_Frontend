@@ -6,9 +6,9 @@ import DeleteCustomer from './components/DeleteCustomer';
 import './App.css';
 function App() {
   return (
-    <div class="card">
-      <div class="card-body" style={{marginLeft:'25%',marginRight:'25%'}}>
-        {/* <h3>Customer Management System</h3> */}
+    <div className="card" style={{backgroundColor:'#CDF0EA'}}>
+      <div className="card-body" style={{marginLeft:'25%',marginRight:'25%'}}>
+        <h2 style={{marginLeft:'25%',marginBottom:'3%'}}>Customer Management System</h2>
         <CustomerList />
         <AddCustomer />
         <UpdateCustomer />

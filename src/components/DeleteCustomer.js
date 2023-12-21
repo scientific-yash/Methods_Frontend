@@ -19,9 +19,9 @@ function DeleteCustomer() {
   };
 
   return (
-    <div class="card" style={{ alignItems: 'center' }}>
+    <div className="card" style={{ alignItems: 'center',backgroundColor:'#E8F6EF' }}>
       <h3>Delete Customer</h3>
-      <div class="card-body" style={{width:'40%'}}>
+      <div className="card-body" style={{width:'40%'}}>
         <label> <strong>Customer ID:</strong> </label>
         <input type="text" onChange={handleInputChange} />
         <button onClick={handleDelete}>Delete Customer</button>
