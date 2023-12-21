@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 function AddCustomer() {
   const [customer, setCustomer] = useState({});
 
@@ -11,26 +12,29 @@ function AddCustomer() {
   const handleSubmit = () => {
     axios.post('http://localhost:5269/api/Customer', customer)
       .then(response => console.log(response))
+      .then(alert("Added Customer Successfully!"))
       .catch(error => console.error(error));
   };
 
   return (
     <>
-    <h2>Add Customer</h2>
+      <div class="card" style={{alignItems:'center'}}>
+        <h3>Add Customer</h3>
+        <div class="card-body" style={{width:'40%'}}>
+          <label> <strong>Id:</strong> </label>
+          <input type='text' name='id' onChange={handleInputChange}/><br />
+          <label> <strong>First Name:</strong> </label>
+          <input type="text" name="firstName" onChange={handleInputChange}/><br />
+          <label> <strong>Last Name:</strong> </label>
+          <input type="text" name="lastName" onChange={handleInputChange} /><br />
+          <label> <strong>Address:</strong> </label>
+          <input type="text" name="address" onChange={handleInputChange} /><br />
+          <label> <strong>Phone Number:</strong> </label>
+          <input type="text" name="phoneNumber" onChange={handleInputChange} /><br />
 
-    <div className='container' style={{display:'flex',alignItems:'center'}}>
-      <label>First Name: </label>
-      <input type="text" name="firstName" onChange={handleInputChange} /><br />
-      <label>Last Name: </label>
-      <input type="text" name="lastName" onChange={handleInputChange} /><br />
-      <label>Address: </label>
-      <input type="text" name="address" onChange={handleInputChange} /><br />
-      <label>Phone Number: </label>
-      <input type="text" name="phoneNumber" onChange={handleInputChange} /><br />
-      
-    </div>
-    <br></br>
-    <button onClick={handleSubmit}>Add Customer</button>
+          <button onClick={handleSubmit}>Add Customer</button>
+        </div>
+      </div>
     </>
   );
 }

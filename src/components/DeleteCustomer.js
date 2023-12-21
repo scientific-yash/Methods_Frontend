@@ -3,24 +3,33 @@ import axios from 'axios';
 
 function DeleteCustomer() {
   const [customerId, setCustomerId] = useState('');
+  const [deleteError, setDeleteError] = useState(null);
 
   const handleInputChange = (e) => {
     setCustomerId(e.target.value);
   };
 
   const handleDelete = () => {
-    axios.delete(`https://localhost:5001/api/customer/${customerId}`)
+    axios.delete(`http://localhost:5269/api/Customer?id=${customerId}`)
       .then(response => console.log(response))
-      .catch(error => console.error(error));
+      .then(alert("Customer Deleted Successfully!"))
+      .catch(error => {
+        setDeleteError("Customer not found or deletion failed");
+      });
   };
 
   return (
-    <div>
-      <h2>Delete Customer</h2>
-      <label>Customer ID: </label>
-      <input type="text" onChange={handleInputChange} />
-      <button onClick={handleDelete}>Delete Customer</button>
+    <div class="card" style={{ alignItems: 'center' }}>
+      <h3>Delete Customer</h3>
+      <div class="card-body" style={{width:'40%'}}>
+        <label> <strong>Customer ID:</strong> </label>
+        <input type="text" onChange={handleInputChange} />
+        <button onClick={handleDelete}>Delete Customer</button>
+
+        {deleteError && <p>{deleteError}</p>}
+      </div>
     </div>
+
   );
 }
 

@@ -11,16 +11,18 @@ function CustomerList() {
 
   return (
     <>
-    <h2>Customer List</h2>
-    <div>
-      <ul>
-        {customers.map(customer => (
-          <li key={customer.id}>
-            {customer.id}. {customer.firstName} {customer.lastName} - {customer.address} - {customer.phoneNumber}
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div class="card" style={{alignItems:'center'}}>
+      <h3>Customer List</h3>
+        <div class="card-body" style={{width:'60%'}}>
+          <ul>
+            {customers.map(customer => (
+              <li key={customer.id}>
+                {customer.id}. {customer.firstName} {customer.lastName} - {customer.address} - {customer.phoneNumber}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
