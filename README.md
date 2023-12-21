@@ -1,1 +1,1 @@
-This Repo contains the frontend part of differnrent methods like Get,Put,Post and Delete
+This Repo contains the frontend part of different methods like Get,Put,Post and Delete
