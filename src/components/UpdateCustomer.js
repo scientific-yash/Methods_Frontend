@@ -21,10 +21,14 @@ function UpdateCustomer() {
 
   const handleUpdate = () => {
     axios.put(`http://localhost:5269/api/Customer?id=${customerId}`, updatedCustomer)
-      .then(response => console.log(response))
-      .then(alert("Updated Successfully!"))
+      .then(response => {
+        console.log(response);
+        alert("Updated Successfully!");
+        window.location.reload(); // Reload the window after updating the customer
+      })
       .catch(error => console.error(error));
   };
+  
 
   return (
     <div className="card" style={{ alignItems: 'center',backgroundColor:'#E8F6EF' }}>

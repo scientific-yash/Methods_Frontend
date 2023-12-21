@@ -11,8 +11,11 @@ function AddCustomer() {
 
   const handleSubmit = () => {
     axios.post('http://localhost:5269/api/Customer', customer)
-      .then(response => console.log(response))
-      .then(alert("Added Customer Successfully!"))
+      .then(response => {
+        console.log(response);
+        alert("Added Customer Successfully!");
+        window.location.reload(); // Reload the window after adding the customer
+      })
       .catch(error => console.error(error));
   };
 

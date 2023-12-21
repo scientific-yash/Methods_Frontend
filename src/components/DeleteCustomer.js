@@ -11,12 +11,17 @@ function DeleteCustomer() {
 
   const handleDelete = () => {
     axios.delete(`http://localhost:5269/api/Customer?id=${customerId}`)
-      .then(response => console.log(response))
-      .then(alert("Customer Deleted Successfully!"))
+      .then(response => {
+        console.log(response);
+        alert("Customer Deleted Successfully!");
+        window.location.reload(); // Reload the window after deleting the customer
+      })
       .catch(error => {
         setDeleteError("Customer not found or deletion failed");
+        console.error(error);
       });
   };
+  
 
   return (
     <div className="card" style={{ alignItems: 'center',backgroundColor:'#E8F6EF' }}>
